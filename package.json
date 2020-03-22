@@ -1,0 +1,19 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "This app consumes Dark Sky API to send query and receive weather data, then data would be serve to browser.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HabedyOmid/weather-app.git"
+  },
+  "author": "Omid Habedy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HabedyOmid/weather-app/issues"
+  },
+  "homepage": "https://github.com/HabedyOmid/weather-app#readme"
+}
