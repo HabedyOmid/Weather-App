@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/HabedyOmid/weather-app/issues"
   },
-  "homepage": "https://github.com/HabedyOmid/weather-app#readme"
+  "homepage": "https://github.com/HabedyOmid/weather-app#readme",
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
 }
