@@ -2,7 +2,12 @@ const axios = require("axios");
 const geocode = require("./utils/geocode");
 const forecast = require("./utils/forecast");
 
-forecast("-114.1395056", "32.6732956", (error, data) => {
+geocode("Los angless", (error, data) => {
+  console.log(error);
+  console.log(data);
+});
+
+forecast("37.8267", "-122.4233", (error, data) => {
   console.log(error);
   console.log(data);
 });
