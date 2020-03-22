@@ -2,14 +2,19 @@ const axios = require("axios");
 const geocode = require("./utils/geocode");
 const forecast = require("./utils/forecast");
 
-geocode("herat", (error, geoData) => {
+geocode("Houston Tx", (error, { latitude, longitude, location }) => {
   if (error) {
     console.log(error);
 
     // No error accured getting geocode
   } else {
-    forecast(geoData.lat, geoData.lng, (error, response) => {
-      console.log(response.data);
+    forecast(latitude, longitude, (error, response) => {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log(location);
+        console.log(response.data);
+      }
     });
   }
 });
