@@ -7,15 +7,18 @@ const geocode = (address, callback) => {
   axios
     .get(url)
 
-    .then(function(res) {
+    .then(response => {
       callback(undefined, {
-        location: res.data.features[0].place_name,
-        lat: res.data.features[0].center[0],
-        lng: res.data.features[0].center[1]
+        location: response.data.features[0].place_name,
+        lat: response.data.features[0].center[0],
+        lng: response.data.features[0].center[1]
       });
     })
-    .catch(function(err) {
+    .catch(error => {
       callback("Unable to find location. Try another search.", undefined);
+    })
+    .finally(() => {
+      // always executed
     });
 };
 
