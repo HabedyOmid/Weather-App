@@ -10,8 +10,8 @@ const geocode = (address, callback) => {
     .then(response => {
       callback(undefined, {
         location: response.data.features[0].place_name,
-        lat: response.data.features[0].center[0],
-        lng: response.data.features[0].center[1]
+        lat: response.data.features[0].center[1],
+        lng: response.data.features[0].center[0]
       });
     })
     .catch(error => {

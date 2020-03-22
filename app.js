@@ -2,12 +2,14 @@ const axios = require("axios");
 const geocode = require("./utils/geocode");
 const forecast = require("./utils/forecast");
 
-geocode("Los angless", (error, data) => {
-  console.log(error);
-  console.log(data);
-});
+geocode("herat", (error, geoData) => {
+  if (error) {
+    console.log(error);
 
-forecast("37.8267", "-122.4233", (error, data) => {
-  console.log(error);
-  console.log(data);
+    // No error accured getting geocode
+  } else {
+    forecast(geoData.lat, geoData.lng, (error, response) => {
+      console.log(response.data);
+    });
+  }
 });
