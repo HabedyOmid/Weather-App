@@ -1,8 +1,8 @@
-const axios = require("axios");
-const geocode = require("./utils/geocode");
-const forecast = require("./utils/forecast");
+const axios = require('axios');
+const geocode = require('./utils/geocode');
+const forecast = require('./utils/forecast');
 
-geocode("Houston Tx", (error, { latitude, longitude, location }) => {
+geocode('Houston Tx', (error, { latitude, longitude, location }) => {
   if (error) {
     console.log(error);
 

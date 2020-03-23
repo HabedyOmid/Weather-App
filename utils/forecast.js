@@ -1,4 +1,4 @@
-const axios = require("axios");
+const axios = require('axios');
 
 // weather forecast by providing address
 const forecast = (lat, lng, callback) => {
@@ -9,7 +9,7 @@ const forecast = (lat, lng, callback) => {
       callback(undefined, response);
     })
     .catch(error => {
-      callback("Unable to get the forecast. Try again!", undefined);
+      callback('Unable to get the forecast. Try again!', undefined);
     })
     .finally(() => {
       // always executed

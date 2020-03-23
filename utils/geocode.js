@@ -1,4 +1,4 @@
-const axios = require("axios");
+const axios = require('axios');
 
 // Convert address to Latitude & Longitude
 const geocode = (address, callback) => {
@@ -15,7 +15,7 @@ const geocode = (address, callback) => {
       });
     })
     .catch(error => {
-      callback("Unable to find location. Try another search.", undefined);
+      callback('Unable to find location. Try another search.', undefined);
     })
     .finally(() => {
       // always executed
