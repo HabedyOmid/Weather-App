@@ -3,6 +3,7 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
+const babel = require('gulp-babel');
 const cleanCSS = require('gulp-clean-css');
 const imagemin = require('gulp-imagemin');
 const browserSync = require('browser-sync').create();
@@ -48,6 +49,11 @@ gulp.task('css', () => {
 gulp.task('js', () => {
   return gulp
     .src(paths.src.js)
+    .pipe(
+      babel({
+        presets: ['@babel/preset-env']
+      })
+    )
     .pipe(uglify())
     .pipe(concat('app.js'))
     .pipe(gulp.dest(paths.dist.js))
