@@ -3,7 +3,7 @@ const express = require('express');
 const hbs = require('hbs');
 
 const axios = require('axios');
-const geocode = require('./src/utils/geocode');
+
 const forecast = require('./src/utils/forecast');
 
 // Initialize express
@@ -22,10 +22,18 @@ hbs.registerPartials(partialPath);
 // Setup static directory
 app.use(express.static(publicPath));
 
-// App routes
+// Homepage
 app.get('', (req, res) => {
-  res.render('index', {
-    title: 'home'
+  forecast('29.7589', '-95.3677', (error, data) => {
+    if (error) {
+      return res.send({ error });
+    }
+
+    return res.render('index', {
+      data
+    });
+
+    return res.send(data);
   });
 });
 
@@ -40,20 +48,3 @@ app.get('*', (req, res) => {
 app.listen(3000, () => {
   console.log('server started...');
 });
-
-// geocode('Houston Tx', (error, { latitude, longitude, location }) => {
-//   if (error) {
-//     console.log(error);
-
-//     // No error accured getting geocode
-//   } else {
-//     forecast(latitude, longitude, (error, response) => {
-//       if (error) {
-//         console.log(error);
-//       } else {
-//         console.log(location);
-//         console.log(response.data);
-//       }
-//     });
-//   }
-// });

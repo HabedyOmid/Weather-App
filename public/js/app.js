@@ -1,1 +1,1 @@
-console.log("gulp js and browserSync is working... :)");
+places({appId:"plD5OC1Z23B2",apiKey:"cc06b9a5fe1f04911a58d9d2274c47b5",container:document.querySelector("#city"),templates:{value:function(e){return console.log(e),e.name}}}).configure({type:"city",aroundLatLngViaIP:!1}),function(){document.querySelector("#city");console.log(CustomElementRegistry)}();
