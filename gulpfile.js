@@ -15,8 +15,8 @@ var paths = {
     root: 'assets',
     css: 'assets/css/*.css',
     js: 'assets/js/*.js',
-    scss: 'assets/scss/**/*.scss',
-    imgs: 'assets/imgs/**/*.+(png|jpg|gif|svg)'
+    scss: 'assets/scss/*.scss',
+    imgs: 'assets/imgs/*.+(png|jpg|gif|svg)'
   },
   dist: {
     root: 'public',

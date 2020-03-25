@@ -15,7 +15,21 @@
     const location = data.suggestion.value;
     const lat = data.suggestion.latlng.lat;
     const lng = data.suggestion.latlng.lng;
-    console.log(lat, lng);
+    let notice = document.getElementById('notice');
+    let xhttp;
+
+    // AJAX
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        // document.getElementById('txtHint').innerHTML = this.responseText;
+      } else {
+        notice.style.display = 'block';
+        notice.innerHTML = this.responseText;
+      }
+    };
+    xhttp.open('GET', `/weather?lat=${lat}&lng=${lng}`, true);
+    xhttp.send();
   });
 
   placesAutocomplete.on('clear', () => {

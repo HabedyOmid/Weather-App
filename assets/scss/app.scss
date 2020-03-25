@@ -2,13 +2,87 @@
 @import 'vendors/bootstrap4.3/functions';
 @import 'vendors/bootstrap4.3/variables';
 @import 'vendors/bootstrap4.3/mixins';
-@import 'vendors/bootstrap4.3/grid';
+// @import 'vendors/bootstrap4.3/grid';
 
 // Customs
-@import 'abstracts/variables';
 
-@import 'base/typography';
-@import 'base/base';
-@import 'base/utilities';
+$white: #ffffff;
+$dark-100: #efb1ff;
+$dark-200: #512b58;
+$dark-300: #2c003e;
+$red: #fe346e;
 
-@import 'components/weather';
+$base-font-family: 'Lato', sans-serif;
+$paragraph-line-height: 3rem;
+$font-size-base: 1.6rem;
+$border-radius: 0.5rem;
+$padding: 2.5rem;
+
+*,
+*::after,
+*::before {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: inherit; // To inherit box-sizing from "body" element
+}
+
+html {
+  font-size: 62.5%; // 10px/16px = 62.5% -> This defines 1rem = 10px
+  background-color: $dark-300;
+}
+
+body {
+  font-family: $base-font-family;
+  color: $red;
+  font-size: $font-size-base; // 1.6 * 10 (Root HTML font size) == 16px / 1rem = 10px
+  box-sizing: border-box;
+}
+
+.weather {
+  width: 100%;
+  background-color: $dark-200;
+}
+.notice {
+  background-color: rgba($red, 0.3);
+  color: $red;
+}
+
+.d-flex {
+  display: flex;
+  &.flex-column {
+    flex-direction: column;
+  }
+  &.justify-center {
+    justify-content: center;
+  }
+  &.justify-left {
+    justify-content: start;
+  }
+  &.justify-right {
+    justify-content: right;
+  }
+  &.align-center {
+    align-items: center;
+  }
+}
+
+.p-2 {
+  padding: $padding;
+}
+.p-1 {
+  padding: 1rem 2rem;
+}
+.mt-2 {
+  margin-top: 2rem;
+}
+.round {
+  border-radius: $border-radius;
+}
+.text-center {
+  text-align: center;
+}
+.wrapper {
+  max-width: 60rem;
+  margin: 0 auto;
+  height: 100vh;
+}

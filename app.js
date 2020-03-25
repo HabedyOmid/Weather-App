@@ -32,8 +32,19 @@ app.get('', (req, res) => {
     return res.render('index', {
       data
     });
+  });
+});
 
-    // return res.send(data);
+// Update weather
+app.get('/weather', (req, res) => {
+  if (!req.query.lat) {
+    return res.send('Invalid address, try again later!');
+  }
+  forecast(req.query.lat, req.query.lng, (error, data) => {
+    if (error) {
+      return res.send(error);
+    }
+    return res.send({ data });
   });
 });
 
