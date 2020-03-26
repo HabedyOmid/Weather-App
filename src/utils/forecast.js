@@ -4,7 +4,7 @@ const axios = require('axios');
 const forecast = (lat, lng, callback) => {
   axios
     .get(
-      `https://api.darksky.net/forecast/9c693d80dd58e2cc4d5f160ecb9ef15e/${lat},${lng}`
+      `https://api.darksky.net/forecast/9c693d80dd58e2cc4d5f160ecb9ef15e/${lat},${lng}?units=ca`
     )
 
     .then(response => {

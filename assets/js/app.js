@@ -8,21 +8,32 @@
     aroundLatLngViaIP: false
   });
 
-  // const $address = document.querySelector('#address-value');
+  // After new address is  set
   placesAutocomplete.on('change', data => {
     // $address.textContent = e.suggestion.value;
 
-    const location = data.suggestion.value;
+    const locationName = data.suggestion.name;
     const lat = data.suggestion.latlng.lat;
     const lng = data.suggestion.latlng.lng;
-    let notice = document.getElementById('notice');
-    let xhttp;
+    let notice = document.getElementById('notice'),
+      temperature = document.getElementById('temperature'),
+      summary = document.getElementById('summary'),
+      windSpeed = document.getElementById('windSpeed'),
+      humidity = document.getElementById('humidity'),
+      location = document.getElementById('location'),
+      time = document.getElementById('time');
 
     // AJAX
-    xhttp = new XMLHttpRequest();
+    let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        // document.getElementById('txtHint').innerHTML = this.responseText;
+        let data = JSON.parse(this.responseText);
+        temperature.innerHTML = data.temperature;
+        summary.innerHTML = data.summary;
+        windSpeed.innerHTML = data.windSpeed;
+        humidity.innerHTML = data.humidity;
+        location.innerHTML = locationName;
+        time.innerHTML = data.time;
       } else {
         notice.style.display = 'block';
         notice.innerHTML = this.responseText;
@@ -35,10 +46,6 @@
   placesAutocomplete.on('clear', () => {
     // $address.textContent = 'none';
   });
-
-  // Select the elements
-  const city = document.querySelector('#city');
-  console.log(city);
 
   city.addEventListener('focusout', () => {
     // console.log('focus is out', lat);

@@ -1,9 +1,7 @@
 const path = require('path');
 const express = require('express');
 const hbs = require('hbs');
-
 const axios = require('axios');
-
 const forecast = require('./src/utils/forecast');
 
 // Initialize express
@@ -29,22 +27,32 @@ app.get('', (req, res) => {
       return res.send({ error });
     }
 
+    // return res.send({ data });
+
     return res.render('index', {
-      data
+      time: data.currently.time,
+      temperature: Math.round(data.currently.temperature),
+      humidity: data.currently.humidity * 100 + '%',
+      summary: data.currently.summary,
+      windSpeed: Math.round(data.currently.windSpeed) + 'KM'
     });
   });
 });
 
-// Update weather
+// AJAX Search weather
 app.get('/weather', (req, res) => {
-  if (!req.query.lat) {
-    return res.send('Invalid address, try again later!');
-  }
   forecast(req.query.lat, req.query.lng, (error, data) => {
     if (error) {
-      return res.send(error);
+      return res.send({ error });
     }
-    return res.send({ data });
+
+    return res.send({
+      time: data.currently.time,
+      temperature: Math.round(data.currently.temperature),
+      humidity: data.currently.humidity * 100 + '%',
+      summary: data.currently.summary,
+      windSpeed: Math.round(data.currently.windSpeed) + 'KM'
+    });
   });
 });
 

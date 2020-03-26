@@ -1,18 +1,10 @@
-// Bootstrap 4.3
-@import 'vendors/bootstrap4.3/functions';
-@import 'vendors/bootstrap4.3/variables';
-@import 'vendors/bootstrap4.3/mixins';
-// @import 'vendors/bootstrap4.3/grid';
-
-// Customs
-
 $white: #ffffff;
 $dark-100: #efb1ff;
 $dark-200: #512b58;
 $dark-300: #2c003e;
 $red: #fe346e;
 
-$base-font-family: 'Lato', sans-serif;
+$base-font-family: 'Montserrat', sans-serif;
 $paragraph-line-height: 3rem;
 $font-size-base: 1.6rem;
 $border-radius: 0.5rem;
@@ -24,6 +16,7 @@ $padding: 2.5rem;
   margin: 0px;
   padding: 0px;
   box-sizing: inherit; // To inherit box-sizing from "body" element
+  font-weight: 300;
 }
 
 html {
@@ -37,20 +30,39 @@ body {
   font-size: $font-size-base; // 1.6 * 10 (Root HTML font size) == 16px / 1rem = 10px
   box-sizing: border-box;
 }
-
+h1,
+h2,
+h3 {
+  font-size: 4rem;
+}
+strong,
+strong * {
+  font-weight: 700;
+}
 .weather {
   width: 100%;
   background-color: $dark-200;
+
+  #summary {
+    max-width: 15rem;
+  }
 }
 .notice {
   background-color: rgba($red, 0.3);
   color: $red;
+  width: 100%;
 }
 
 .d-flex {
   display: flex;
+  &.flex-grow {
+    flex: 1;
+  }
   &.flex-column {
     flex-direction: column;
+  }
+  &.justify-space-between {
+    justify-content: space-between;
   }
   &.justify-center {
     justify-content: center;
@@ -64,6 +76,15 @@ body {
   &.align-center {
     align-items: center;
   }
+  &.self-start {
+    align-self: flex-start;
+  }
+  &.self-center {
+    align-self: flex-center;
+  }
+  &.self-end {
+    align-self: flex-end;
+  }
 }
 
 .p-2 {
@@ -72,8 +93,37 @@ body {
 .p-1 {
   padding: 1rem 2rem;
 }
+.pl-2 {
+  padding-left: 2rem;
+}
+.pl-3 {
+  padding-left: 3rem;
+}
+.pr-3 {
+  padding-right: 3rem;
+}
+.pl-4 {
+  padding-left: 4rem;
+}
+.py-2 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.px-3 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+.mt-half {
+  margin-top: 0.5rem;
+}
 .mt-2 {
   margin-top: 2rem;
+}
+.mt-1 {
+  margin-top: 1rem;
+}
+.mb-2 {
+  margin-bottom: 2rem;
 }
 .round {
   border-radius: $border-radius;
@@ -81,8 +131,23 @@ body {
 .text-center {
   text-align: center;
 }
+.text-uppercase {
+  text-transform: uppercase;
+}
+.font-sm {
+  font-size: 1.2rem;
+}
+.bold {
+  font-weight: 700;
+}
+.bolder {
+  font-weight: 800;
+}
+.text-white {
+  color: $white;
+}
 .wrapper {
-  max-width: 60rem;
+  max-width: 50rem;
   margin: 0 auto;
   height: 100vh;
 }
