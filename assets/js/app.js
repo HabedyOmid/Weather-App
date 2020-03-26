@@ -8,7 +8,7 @@
     aroundLatLngViaIP: false
   });
 
-  // After new address is  set
+  // After new address is set
   placesAutocomplete.on('change', data => {
     const locationName = data.suggestion.name;
     const lat = data.suggestion.latlng.lat;
