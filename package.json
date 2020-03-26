@@ -4,7 +4,7 @@
   "description": "This app consumes Dark Sky API to send query and receive weather data, then data would be serve to browser.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
