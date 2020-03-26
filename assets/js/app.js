@@ -11,27 +11,35 @@
   // After new address is  set
   placesAutocomplete.on('change', data => {
     // $address.textContent = e.suggestion.value;
-
     const locationName = data.suggestion.name;
     const lat = data.suggestion.latlng.lat;
     const lng = data.suggestion.latlng.lng;
-    let notice = document.getElementById('notice'),
+    let placeholder = document.querySelector('.placeholder'),
+      notice = document.getElementById('notice'),
       weather = document.getElementById('weather'),
       temperature = document.getElementById('temperature'),
       summary = document.getElementById('summary'),
       windSpeed = document.getElementById('windSpeed'),
       humidity = document.getElementById('humidity'),
       location = document.getElementById('location');
+      placeholder.style.display = 'block';
 
-    // AJAX
+
+    // Send AJAX Request
     let xhttp = new XMLHttpRequest();
+
     xhttp.onreadystatechange = function() {
+
+      // There is error
       if (!this.readyState == 4 && this.status == 200) {
         notice.style.display = 'block';
         weather.style.display = 'none';
         notice.innerHTML = this.responseText;
       }
+
+      // Success 
       let data = JSON.parse(this.responseText);
+      placeholder.style.display = 'none';
       weather.style.display = 'flex';
       notice.style.display = 'none';
       temperature.innerHTML = data.temperature;

@@ -43,8 +43,15 @@ a:visited:active {
   color: #ff9ab7;
 }
 
+.wrapper {
+  max-width: 50rem;
+  margin: 0 auto;
+  height: 100vh;
+}
+
 .weather {
   width: 100%;
+  position: relative;
   background-color: #512b58;
 }
 
@@ -56,6 +63,55 @@ a:visited:active {
   background-color: rgba(254, 52, 110, 0.3);
   color: #fe346e;
   width: 100%;
+}
+
+.placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.placeholder__content {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 8px;
+  overflow: hidden;
+  padding: 2rem;
+  background-color: #ffffff;
+}
+
+.placeholder__item {
+  position: relative;
+}
+
+.placeholder__item.loader {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.placeholder__item:nth-child(1) {
+  grid-column: 1 / span 3;
+}
+
+.placeholder__item:nth-child(2), .placeholder__item:nth-child(5) {
+  grid-column: 1;
+}
+
+.placeholder__item:nth-child(5) {
+  grid-row-start: 3;
+  grid-row-end: span 3;
+}
+
+.placeholder__item:nth-child(3), .placeholder__item:nth-child(6), .placeholder__item:nth-child(8), .placeholder__item:nth-child(10) {
+  grid-column: 2;
+}
+
+.placeholder__item:nth-child(4), .placeholder__item:nth-child(7), .placeholder__item:nth-child(9) {
+  grid-column: 3;
 }
 
 .d-flex {
@@ -219,8 +275,36 @@ a:visited:active {
   color: #fe346e;
 }
 
-.wrapper {
-  max-width: 50rem;
-  margin: 0 auto;
-  height: 100vh;
+.loading-background {
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-name: placeHolderShimmer;
+          animation-name: placeHolderShimmer;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  background: #f6f7f8;
+  background: -webkit-linear-gradient(left, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+  background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+  background-size: 275% 104px;
+  position: relative;
+}
+
+@-webkit-keyframes placeHolderShimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
 }
