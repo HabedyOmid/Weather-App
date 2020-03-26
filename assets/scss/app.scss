@@ -64,6 +64,7 @@ a:visited {
   width: 100%;
   position: relative;
   background-color: $dark-200;
+  box-shadow: 0px 0px 35px -12px rgba($black, 0.75);
 
   #summary {
     max-width: 15rem;

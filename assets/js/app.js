@@ -23,7 +23,6 @@
       location = document.getElementById('location');
       placeholder.style.display = 'block';
 
-
     // Send AJAX Request
     let xhttp = new XMLHttpRequest();
 
@@ -37,16 +36,19 @@
       }
 
       // Success 
-      let data = JSON.parse(this.responseText);
-      placeholder.style.display = 'none';
-      weather.style.display = 'flex';
-      notice.style.display = 'none';
-      temperature.innerHTML = data.temperature;
-      summary.innerHTML = data.summary;
-      windSpeed.innerHTML = data.windSpeed;
-      humidity.innerHTML = data.humidity;
-      location.innerHTML = locationName;
-    };
+      if(this.responseText){
+        const forecast = JSON.parse(this.responseText);
+
+        placeholder.style.display = 'none';
+        weather.style.display = 'flex';
+        notice.style.display = 'none';
+        temperature.innerHTML = forecast.temperature;
+        summary.innerHTML = forecast.summary;
+        windSpeed.innerHTML = forecast.windSpeed;
+        humidity.innerHTML = forecast.humidity;
+        location.innerHTML = locationName;
+      }
+    }
     xhttp.open('GET', `/weather?lat=${lat}&lng=${lng}`, true);
     xhttp.send();
   });
