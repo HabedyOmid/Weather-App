@@ -32,7 +32,8 @@ app.get('', (req, res) => {
       temperature: Math.round(data.currently.temperature),
       humidity: Math.round(data.currently.humidity * 100) + '%',
       summary: data.currently.summary,
-      windSpeed: Math.round(data.currently.windSpeed) + 'KM'
+      windSpeed: Math.round(data.currently.windSpeed) + 'KM',
+      title: 'Weather Forecast'
     });
   });
 });
