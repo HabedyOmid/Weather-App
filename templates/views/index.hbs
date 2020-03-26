@@ -8,9 +8,13 @@
 
         <input type="search" id="city" class="form-control" placeholder="Enter name of the city..." />
 
-        <div class="notice p-1 mt-2 round text-center" id="notice" style="display: none;"></div>
+        <div class="notice p-1 mt-2 round text-center" id="notice"
+            style="display:none; {{#if error}} display: block; {{/if}}">
+            {{error}}
+        </div>
 
-        <div class="weather d-flex justify-space-between align-center py-2 px-3 mt-2 round">
+        <div class="weather d-flex justify-space-between align-center py-2 px-3 mt-2 round"
+            style=" {{#if error}} display: none; {{/if}}" id="weather">
 
             <div class="d-flex flex-column self-end justify-right text-center">
                 <p class="bold text-primary">Forecast</p>
@@ -41,7 +45,6 @@
             Powered by <a target="_blank" href="https://nodejs.org/en/">nodejs</a> and <a target="_blank"
                 href="https://expressjs.com/">expressjs</a>
         </small>
-
 
     </div>
 

@@ -16,6 +16,7 @@
     const lat = data.suggestion.latlng.lat;
     const lng = data.suggestion.latlng.lng;
     let notice = document.getElementById('notice'),
+      weather = document.getElementById('weather'),
       temperature = document.getElementById('temperature'),
       summary = document.getElementById('summary'),
       windSpeed = document.getElementById('windSpeed'),
@@ -25,17 +26,19 @@
     // AJAX
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        let data = JSON.parse(this.responseText);
-        temperature.innerHTML = data.temperature;
-        summary.innerHTML = data.summary;
-        windSpeed.innerHTML = data.windSpeed;
-        humidity.innerHTML = data.humidity;
-        location.innerHTML = locationName;
-      } else {
+      if (!this.readyState == 4 && this.status == 200) {
         notice.style.display = 'block';
+        weather.style.display = 'none';
         notice.innerHTML = this.responseText;
       }
+      let data = JSON.parse(this.responseText);
+      weather.style.display = 'flex';
+      notice.style.display = 'none';
+      temperature.innerHTML = data.temperature;
+      summary.innerHTML = data.summary;
+      windSpeed.innerHTML = data.windSpeed;
+      humidity.innerHTML = data.humidity;
+      location.innerHTML = locationName;
     };
     xhttp.open('GET', `/weather?lat=${lat}&lng=${lng}`, true);
     xhttp.send();

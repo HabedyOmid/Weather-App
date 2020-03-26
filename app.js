@@ -24,10 +24,8 @@ app.use(express.static(publicPath));
 app.get('', (req, res) => {
   forecast('29.7589', '-95.3677', (error, data) => {
     if (error) {
-      return res.send({ error });
+      return res.render('index', { error });
     }
-
-    // return res.send({ data });
 
     return res.render('index', {
       temperature: Math.round(data.currently.temperature),
@@ -42,7 +40,7 @@ app.get('', (req, res) => {
 app.get('/weather', (req, res) => {
   forecast(req.query.lat, req.query.lng, (error, data) => {
     if (error) {
-      return res.send({ error });
+      return res.send(error);
     }
 
     return res.send({
