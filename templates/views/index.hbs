@@ -2,16 +2,13 @@
 
 <body>
 
-    <div class="wrapper d-flex flex-column justify-center align-center">
+    <main class="wrapper d-flex flex-column justify-center align-center">
 
         <h1 class="mb-2 bolder text-primary">Weather Forecast</h1>
 
         <input type="search" id="city" class="form-control" placeholder="Enter name of the city..." />
 
-        <div class="notice p-1 mt-2 round text-center" id="notice"
-            style="display:none; {{#if error}} display: block; {{/if}}">
-            {{error}}
-        </div>
+        <div class="notice p-1 mt-2 round text-center" id="notice"style="display:none; {{#if error}} display: block; {{/if}}">{{error}}</div>
 
         <div class="weather d-flex justify-space-between align-center py-2 px-3 mt-2 round" style=" {{#if error}} display: none; {{/if}}" id="weather">
 
@@ -61,7 +58,7 @@
                 href="https://expressjs.com/">expressjs</a>
         </small>
 
-    </div>
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/places.js@1.18.1"></script>
     <script src="/js/app.js"></script>
