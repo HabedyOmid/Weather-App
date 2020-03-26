@@ -20,8 +20,7 @@
       summary = document.getElementById('summary'),
       windSpeed = document.getElementById('windSpeed'),
       humidity = document.getElementById('humidity'),
-      location = document.getElementById('location'),
-      time = document.getElementById('time');
+      location = document.getElementById('location');
 
     // AJAX
     let xhttp = new XMLHttpRequest();
@@ -33,7 +32,6 @@
         windSpeed.innerHTML = data.windSpeed;
         humidity.innerHTML = data.humidity;
         location.innerHTML = locationName;
-        time.innerHTML = data.time;
       } else {
         notice.style.display = 'block';
         notice.innerHTML = this.responseText;

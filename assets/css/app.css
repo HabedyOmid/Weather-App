@@ -14,7 +14,7 @@ html {
 
 body {
   font-family: "Montserrat", sans-serif;
-  color: #fe346e;
+  color: #000000;
   font-size: 1.6rem;
   box-sizing: border-box;
 }
@@ -28,6 +28,19 @@ h3 {
 strong,
 strong * {
   font-weight: 700;
+}
+
+a:link,
+a:visited {
+  color: #fe346e;
+  text-decoration: none;
+}
+
+a:link:hover, a:link:focus, a:link:active,
+a:visited:hover,
+a:visited:focus,
+a:visited:active {
+  color: #ff9ab7;
 }
 
 .weather {
@@ -196,6 +209,10 @@ strong * {
 
 .text-white {
   color: #ffffff;
+}
+
+.text-primary {
+  color: #fe346e;
 }
 
 .wrapper {

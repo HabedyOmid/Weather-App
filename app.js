@@ -30,7 +30,6 @@ app.get('', (req, res) => {
     // return res.send({ data });
 
     return res.render('index', {
-      time: data.currently.time,
       temperature: Math.round(data.currently.temperature),
       humidity: data.currently.humidity * 100 + '%',
       summary: data.currently.summary,
@@ -47,7 +46,6 @@ app.get('/weather', (req, res) => {
     }
 
     return res.send({
-      time: data.currently.time,
       temperature: Math.round(data.currently.temperature),
       humidity: data.currently.humidity * 100 + '%',
       summary: data.currently.summary,

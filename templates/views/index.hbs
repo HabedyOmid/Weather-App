@@ -4,63 +4,48 @@
 
     <div class="wrapper d-flex flex-column justify-center align-center">
 
-        <h1 class="mb-2 bolder">home</h1>
+        <h1 class="mb-2 bolder text-primary">Weather Forecast</h1>
 
-        <input type="search" id="city" class="form-control" placeholder="In which city do you live?" />
+        <input type="search" id="city" class="form-control" placeholder="Enter name of the city..." />
 
         <div class="notice p-1 mt-2 round text-center" id="notice" style="display: none;"></div>
 
         <div class="weather d-flex justify-space-between align-center py-2 px-3 mt-2 round">
-            <div class="d-flex flex-column">
 
-                <h2 class=" text-white">
-                    <span class="bold" id="temperature">{{temperature}}</span><span class="bold">&#8451;</span>
+            <div class="d-flex flex-column self-end justify-right text-center">
+                <p class="bold text-primary">Forecast</p>
+                <p class="text-white text-uppercase font-sm" id="location">Houston, TX</p>
+                <h2 class="mt-1 text-primary">
+                    <span class="bolder" id="temperature">{{temperature}}</span><span>&#8451;</span>
                 </h2>
+            </div>
 
-                <p class="text-uppercase text-white font-sm mt-1" id="summary">{{summary}}
-                </p>
+            <div class="d-flex flex-column text-center">
+                <p class="text-uppercase text-white font-sm" id="summary">{{summary}}</p>
 
                 <small class="font-sm text-white mt-half">
                     <span>Wind Speed:</span>
                     <span class="bold" id="windSpeed">{{windSpeed}}<span></small>
 
-                <small class="font-sm text-white">
+                <small class="font-sm text-white mt-half">
                     <span>Humidity:</span>
                     <span class="bold" id="humidity">{{humidity}}<span></small>
             </div>
 
-            <div class="d-flex flex-grow flex-column self-end pl-3 justify-right text-center">
-                <p class="bold">Forecast</p>
-                <p class="text-white text-uppercase font-sm" id="location">Houston, TX</p>
-                <h2 class="bolder mt-1" id="time">{{time}}</h2>
-
-            </div>
         </div>
+
+        <small class="mt-2 text-white font-sm">Built by: <a target="_blank" href="https://omidhabedy.me">Omid
+                Habedy</a></small>
+
+        <small class="text-white  font-sm">
+            Powered by <a target="_blank" href="https://nodejs.org/en/">nodejs</a> and <a target="_blank"
+                href="https://expressjs.com/">expressjs</a>
+        </small>
+
 
     </div>
 
     {{>footer}}
-
-
-
-
-    <script>
-
-        let time = document.getElementById("time");
-        timestamp = time.innerHTML;
-        timestamp = Number(timestamp);
-        timestamp = new Date(timestamp); // works
-
-
-
-        var ts = '1585190043';
-        ts = Number(ts); // cast it to a Number
-        var date = new Date(ts); // works
-
-        let newTime = moment(timestamp).format('LT');
-        console.log(date);
-
-    </script>
 
 </body>
 

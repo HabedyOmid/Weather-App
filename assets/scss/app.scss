@@ -1,8 +1,10 @@
+$black: #000000;
 $white: #ffffff;
 $dark-100: #efb1ff;
 $dark-200: #512b58;
 $dark-300: #2c003e;
 $red: #fe346e;
+$primary: $red;
 
 $base-font-family: 'Montserrat', sans-serif;
 $paragraph-line-height: 3rem;
@@ -26,7 +28,7 @@ html {
 
 body {
   font-family: $base-font-family;
-  color: $red;
+  color: $black;
   font-size: $font-size-base; // 1.6 * 10 (Root HTML font size) == 16px / 1rem = 10px
   box-sizing: border-box;
 }
@@ -38,6 +40,17 @@ h3 {
 strong,
 strong * {
   font-weight: 700;
+}
+
+a:link,
+a:visited {
+  color: $primary;
+  text-decoration: none;
+  &:hover,
+  &:focus,
+  &:active {
+    color: lighten($red, 20%);
+  }
 }
 .weather {
   width: 100%;
@@ -145,6 +158,9 @@ strong * {
 }
 .text-white {
   color: $white;
+}
+.text-primary {
+  color: $primary;
 }
 .wrapper {
   max-width: 50rem;
