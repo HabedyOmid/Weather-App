@@ -10,7 +10,6 @@
 
   // After new address is  set
   placesAutocomplete.on('change', data => {
-    // $address.textContent = e.suggestion.value;
     const locationName = data.suggestion.name;
     const lat = data.suggestion.latlng.lat;
     const lng = data.suggestion.latlng.lng;
@@ -52,11 +51,7 @@
     xhttp.send();
   });
 
-  placesAutocomplete.on('clear', () => {
-    // $address.textContent = 'none';
-  });
+  placesAutocomplete.on('clear', () => { });
 
-  city.addEventListener('focusout', () => {
-    // console.log('focus is out', lat);
-  });
+  city.addEventListener('focusout', () => {});
 })();

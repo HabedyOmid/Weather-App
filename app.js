@@ -29,7 +29,7 @@ app.get('', (req, res) => {
 
     return res.render('index', {
       temperature: Math.round(data.currently.temperature),
-      humidity: data.currently.humidity * 100 + '%',
+      humidity: Math.round(data.currently.humidity * 100) + '%',
       summary: data.currently.summary,
       windSpeed: Math.round(data.currently.windSpeed) + 'KM'
     });
@@ -45,7 +45,7 @@ app.get('/weather', (req, res) => {
 
     return res.send({
       temperature: Math.round(data.currently.temperature),
-      humidity: data.currently.humidity * 100 + '%',
+      humidity: Math.round(data.currently.humidity * 100) + '%',
       summary: data.currently.summary,
       windSpeed: Math.round(data.currently.windSpeed) + 'KM'
     });

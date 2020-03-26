@@ -13,13 +13,12 @@
             {{error}}
         </div>
 
-        <div class="weather d-flex justify-space-between align-center py-2 px-3 mt-2 round"
-            style=" {{#if error}} display: none; {{/if}}" id="weather">
+        <div class="weather d-flex justify-space-between align-center py-2 px-3 mt-2 round" style=" {{#if error}} display: none; {{/if}}" id="weather">
 
             <div class="d-flex flex-column self-end justify-right text-center">
                 <p class="bold text-primary">Forecast</p>
-                <p class="text-white text-uppercase font-sm" id="location">Houston, TX</p>
-                <h2 class="mt-1 text-primary">
+                <p class="text-white font-sm" id="location">Houston, TX</p>
+                <h2 class="text-primary mt-half">
                     <span class="bolder" id="temperature">{{temperature}}</span><span>&#8451;</span>
                 </h2>
             </div>
@@ -51,7 +50,7 @@
                     <div class="placeholder__item loader loading-background"></div>
                 </div>
             </div>
-            
+
         </div>
 
         <small class="mt-2 text-white font-sm">Built by: <a target="_blank" href="https://omidhabedy.me">Omid
