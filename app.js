@@ -34,7 +34,7 @@ app.get('', (req, res) => {
       summary: data.currently.summary,
       windSpeed: Math.round(data.currently.windSpeed) + 'KM',
       title: 'Weather Forecast'
-    });
+    });  
   });
 });
 
