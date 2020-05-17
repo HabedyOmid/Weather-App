@@ -1,49 +1,49 @@
 {
-  "name": "weather-app",
-  "version": "1.0.0",
-  "description": "This app consumes Dark Sky API to send query and receive weather data, then data would be serve to browser.",
-  "main": "app.js",
-  "scripts": {
-    "start": "node app.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/HabedyOmid/weather-app.git"
-  },
-  "author": "Omid Habedy",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/HabedyOmid/weather-app/issues"
-  },
-  "homepage": "https://github.com/HabedyOmid/weather-app#readme",
-  "dependencies": {
-    "axios": "^0.19.2",
-    "express": "^4.17.1",
-    "hbs": "^4.1.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.0",
-    "browser-sync": "^2.26.7",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^7.0.1",
-    "gulp-babel": "^8.0.0",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-imagemin": "^7.1.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-uglify": "^3.0.2"
-  },
-  "browserslist": [
-    "> 1%",
-    "ie >= 9",
-    "edge >= 15",
-    "ie_mob >= 10",
-    "ff >= 45",
-    "chrome >= 45",
-    "safari >= 7",
-    "opera >= 23",
-    "ios >= 7",
-    "android >= 4"
-  ]
+	"name": "weather-app",
+	"version": "1.0.0",
+	"description": "This app consumes Dark Sky API to send query and receive weather data, then data would be serve to browser.",
+	"main": "app.js",
+	"scripts": {
+		"start": "node app.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/HabedyOmid/weather-app.git"
+	},
+	"author": "Omid Habedy",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/HabedyOmid/weather-app/issues"
+	},
+	"homepage": "https://github.com/HabedyOmid/weather-app#readme",
+	"dependencies": {
+		"axios": "^0.19.2",
+		"express": "^4.17.1",
+		"hbs": "^4.1.0"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.9.0",
+		"@babel/preset-env": "^7.9.0",
+		"browser-sync": "^2.26.7",
+		"gulp": "^4.0.2",
+		"gulp-autoprefixer": "^7.0.1",
+		"gulp-babel": "^8.0.0",
+		"gulp-clean-css": "^4.3.0",
+		"gulp-concat": "^2.6.1",
+		"gulp-imagemin": "^7.1.0",
+		"gulp-sass": "^4.0.2",
+		"gulp-uglify": "^3.0.2"
+	},
+	"browserslist": [
+		"> 1%",
+		"ie >= 9",
+		"edge >= 15",
+		"ie_mob >= 10",
+		"ff >= 45",
+		"chrome >= 45",
+		"safari >= 7",
+		"opera >= 23",
+		"ios >= 7",
+		"android >= 4"
+	]
 }
